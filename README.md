@@ -15,6 +15,11 @@ This project is a full-stack website developed using Node.js and Express.js. It 
 
 <br>
 
+### Preview:
+
+![weather checker](https://github.com/shanibider/Weather-Website-Public-API/assets/72359805/c40fc899-f08e-41c0-9f91-f2cc460d1858)
+
+<br>
 
 
 ## Running locally
