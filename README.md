@@ -1,17 +1,25 @@
-#  Weather Checker Website
+# Weather Checker REST API 🌦️
 
-## Overview
-This project is a full-stack website developed using Node.js and Express.js. It leverages the Axios HTTP client for seamless communication with the OpenWeatherMap API. The project focuses on integrating the OpenWeatherMap API, showcasing the ability to bind external data within the application seamlessly.
+The Weather Checker is a ****RESTful API**** built using ****Node.js and Express****, providing real-time weather data from the OpenWeatherMap API. This project demonstrates the seamless integration of external APIs into a Node.js backend, allowing clients, including React applications, to retrieve weather information effortlessly.
 
-## Tech
-- [ ] Node.js and Express.js, for server-side programming.
-- [ ] Axios for client-server communication.
-- [ ] EJS Templating, for dynamic HTML rendering.
-- [ ] Public API Integration - manipulate, present, and work with data retrieved from APIs.
+## Key Features 🚀
+
+- [x] **Real-Time Weather Data**: Provides up-to-date weather information fetched from the OpenWeatherMap API.
+- [x]  **RESTful Architecture**: Follows RESTful principles for API design, ensuring scalability and ease of use.
+- [x]  **Node.js and Express**: Utilizes Node.js and Express for building a robust and efficient server-side application.
+- [x] **Public API Integration**: Demonstrates the ability to manipulate and present data retrieved from external APIs.
+- [x] **Cross-Origin Resource Sharing (CORS)**: Enables secure communication between the API server and client-side applications, including React.
 
 
-### built using:
-[![My Skills](https://skillicons.dev/icons?i=js,react,html,css)](https://skillicons.dev)
+## Technologies Used 💻
+[![My Skills](https://skillicons.dev/icons?i=js,nodejs,express,react,html,css)](https://skillicons.dev)
+
+- [x]  **Node.js**: A JavaScript runtime environment that executes server-side code, facilitating the development of scalable and high-performance applications.
+- [x]  **Express**: A minimalist web application framework for Node.js, providing a robust set of features for building RESTful APIs and web servers.
+- [x]  **React**: A JavaScript library for building interactive user interfaces, enabling the creation of dynamic and responsive front-end applications.
+- [x]  **Axios**: A promise-based HTTP client for JavaScript, simplifying the process of making asynchronous HTTP requests from the client to the server.
+- [x]  **OpenWeatherMap API**: An external API that provides weather data, including current weather, forecasts, and historical weather data, for various locations worldwide.
+- [x]  **Cross-Origin Resource Sharing (CORS)**: A mechanism that allows restricted resources on a web page to be requested from another domain, facilitating secure cross-origin communication.
 
 <br>
 
@@ -19,10 +27,10 @@ This project is a full-stack website developed using Node.js and Express.js. It 
 
 ![weather checker](https://github.com/shanibider/Weather-Website-Public-API/assets/72359805/c40fc899-f08e-41c0-9f91-f2cc460d1858)
 
+
 <br>
 
-
-## Running locally
+## Running locally 🛠️
 Clone the repository.
 
 Install the required dependencies:
@@ -41,15 +49,29 @@ Visit the website and enter your location to check if it will rain tomorrow: [ht
 
 <br>
 
-## 🔗 Connect with me 👩‍💻😊
-<p align="left">
-<a href="https://linkedin.com/in/shanibider" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="shanibider" height="30" width="40" /></a>
-<a style="margin-left: 145x;" href="mailto:shanibider@gmail.com"><img align="center" src="https://img.icons8.com/ios-glyphs/30/000000/new-post.png" alt="shanibider@gmail.com" height="40" width="40" /></a>
-</p>
+## Usage 📝
+
+To retrieve weather data, make HTTP requests to the provided API endpoints, specifying the location or coordinates for which you want to fetch weather information. Parse the JSON response to extract the desired weather parameters and display them in your application.
+
+
 
 <br>
 
-## 🔗 Connect with me 👩‍💻😊
-[![github](https://img.shields.io/badge/my_github-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/shanibider)
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shani-bider-0848b8177/)
 
+
+## 🔗 Connect with me 👩‍💻😊
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shani-bider/)
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://shanibider.github.io/Portfolio/)
+[![gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:shanibider@gmail.com)
+
+
+<footer>
+<p style="float:left; width: 20%;">
+Copyright © Shani Bider, 2024
+</p>
+</footer>
+
+
+## License
+
+This project is licensed under the MIT License.
