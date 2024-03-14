@@ -1,77 +1,53 @@
 // Using the Blockchain API to check the price of a cryptocurrency for the user.
 
-// i get error when trying upload to git !
-
-
 import express from 'express';
 import axios from 'axios';
 import bodyParser from 'body-parser';
 
-const app = express();    // crete a new express app
+const app = express();
 const port = 3000;
 
-
-const API_URL = "https://api.openweathermap.org/data/2.5/forecast";  // endpoint for 5 day forecast data
+const API_URL = "https://api.openweathermap.org/data/2.5/weather";  // endpoint for current weather data
 const apiKey = "bc8fcba16f783c2edfcefd88648c5c0a";
 
-
-const yourBearerToken = "";
-const config = {
-  headers: { Authorization: `Bearer ${yourBearerToken}` },
-};
-
+app.set('view engine', 'ejs'); // Set view engine to EJS
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-    app.get("/", async (req, res) => {
-        try {
-            const city = "New York";
-            const response = await axios.get(`${API_URL}?q=${city}&appid=${apiKey}`);
-            
-            // Filter the data for tomorrow
-            const tomorrow = new Date();
-            tomorrow.setDate (tomorrow.getDate() + 1);
-            const tomorrowDate = tomorrow.toISOString().split('T')[0];
+// Route to handle form submission and render weather data
+app.post("/", async (req, res) => {
+    try {
+        const city = req.body.city; // Get the city name from the form
+        const response = await axios.get(`${API_URL}?q=${city}&appid=${apiKey}&units=metric`); // Fetch current weather data for the city
 
-            console.log(tomorrow);
-            console.log(tomorrowDate);
-            console.log(response.data.list);                // 5 day forecast
-            console.log(response.data.list[0]);             // today forecast
-            console.log(response.data.list[0].dt_txt);      //dt_txt contains the date and time of the forecast entry.
-            // Temperature in Celsius=Temperature in Kelvin−273.15
-            // NEED TO CHANGE HERE THE DEGREES
-            console.log("current temp: ", response.data.list[0].main.temp);
+        // Check if the response contains the expected data structure
+        if (response.data && response.data.main && response.data.weather && response.data.weather.length > 0) {
+            // Extract relevant weather information from the API response
+            const temperature = response.data.main.temp;
+            const description = response.data.weather[0].description;
+            const icon = response.data.weather[0].icon;
+            const iconURL = `http://openweathermap.org/img/wn/${icon}.png`;
 
-
-            // For each entry in the list, the callback checks if the dt_txt property of that entry includes the date for tomorrow.
-            // returns the forecast entry for tomorrow from the list. find = If it finds an element that satisfies the condition, it is assigned to the variable forecastTomorrow. If no matching entry is found, forecastTomorrow will be undefined.
-            const forecastTomorrow = response.data.list.find (entry => entry.dt_txt.includes(tomorrowDate));
-            console.log("Forecast for tomorrow:", forecastTomorrow);
-
-
-            if (forecastTomorrow && forecastTomorrow.weather) {
-                // arrow function used as the callback function for the some method. It takes each element of the weather array as its parameter (named weather).
-                // then accesses the main property of each element and check if it's equal to 'rain'.
-                // If at least one element satisfies this condition, willRainTomorrow is set to true; otherwise, it is set to false.
-                const willRainTomorrow = forecastTomorrow.weather.some (weather => weather.main.toLowerCase() === 'rain');
-                res.render("index.ejs", { willRainTomorrow, city, });
-            } else {
-                res.render("index.ejs", { error: "Unable to determine the weather for tomorrow." });
-            }
-        } catch (error) {
-            console.error("Failed to make request:", error.message);
-            res.render("index.ejs", { error: error.message });
+            // Render the index.ejs template with the weather information and send it to the client
+            res.render("index.ejs", { city, temperature, description, iconURL });
+        } else {
+            // If the response does not contain the expected data, render an error message
+            res.render("index.ejs", { error: "Failed to fetch weather information. Please try again later." });
         }
-    });
-    
-    
+    } catch (error) {
+        console.error("Failed to make request:", error.message);
+        res.render("index.ejs", { error: "Failed to fetch weather information. Please try again later." });
+    }
+});
 
+// Default route to render the form
+app.get("/", (req, res) => {
+    res.render("index.ejs"); // Render the form for entering city name
+});
 
-
-    app.listen(port, () => {
-        console.log(`Server is running on port ${port}`);
-    });
-
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+});
 
 
     
