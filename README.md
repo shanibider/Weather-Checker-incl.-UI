@@ -1,6 +1,10 @@
-# Weather Checker REST API 🌦️
+# 🌦️ Weather Checker REST API   <img height="50px" align="center" src="https://github.com/shanibider/NodeJs-Express-Weather-Website/assets/72359805/c3c57bca-cd99-4761-b465-42049617251c"> 
 
-The Weather Checker is a ****RESTful API**** built using ****Node.js and Express****, providing real-time weather data from the OpenWeatherMap API. This project demonstrates the seamless integration of external APIs into a Node.js backend, allowing clients, including React applications, to retrieve weather information effortlessly.
+The Weather Checker is a **RESTful API** built using **Node.js and Express** <img height=20px src="https://skillicons.dev/icons?i=express"> <img height=20px src="https://skillicons.dev/icons?i=nodejs"> <img height=20px src="https://skillicons.dev/icons?i=js">,
+providing real-time weather data from the **OpenWeatherMap API**. This project demonstrates the seamless integration of external APIs into a Node.js backend, allowing clients, including React applications, to retrieve weather information effortlessly.
+
+<div align="center">
+<img height="400px" src="https://github.com/shanibider/NodeJs-Express-Weather-Website/assets/72359805/901d6dbb-338d-4413-a3fd-ff0336deff4d"></div>
 
 ## Key Features 🚀
 
@@ -24,8 +28,9 @@ The Weather Checker is a ****RESTful API**** built using ****Node.js and Express
 <br>
 
 ### Preview:
+![weather1](https://github.com/shanibider/NodeJs-Express-Weather-Website/assets/72359805/a172c8c6-72ee-4ded-a08f-0d6ee6498c0e)
+![weather2](https://github.com/shanibider/NodeJs-Express-Weather-Website/assets/72359805/17631156-9f8b-472b-9d8a-f353b732b593)
 
-![weather checker](https://github.com/shanibider/Weather-Website-Public-API/assets/72359805/c40fc899-f08e-41c0-9f91-f2cc460d1858)
 
 
 <br>
@@ -51,7 +56,7 @@ Visit the website and enter your location to check if it will rain tomorrow: [ht
 
 ## Usage 📝
 
-To retrieve weather data, make HTTP requests to the provided API endpoints, specifying the location or coordinates for which you want to fetch weather information. Parse the JSON response to extract the desired weather parameters and display them in your application.
+- [x] To retrieve weather data, make HTTP requests to the provided API endpoints, specifying the location or coordinates for which you want to fetch weather information. Parse the JSON response to extract the desired weather parameters and display them in your application.
 
 
 
@@ -73,5 +78,4 @@ Copyright © Shani Bider, 2024
 
 
 ## License
-
 This project is licensed under the MIT License.
